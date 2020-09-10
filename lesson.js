@@ -182,48 +182,143 @@
 // console.log( changeBtn.classList.contains("btn") ); //true Проверить наличие
 // changeBtn.classList.toggle("my-5"); //добавляет или удаляет класс
 
+//Планирование
+// let coffeeOper = document.querySelector(".coffee-oper"); //
+
+// setTimeout(function() { //function() -- функция коллбэк
+//   coffeeOper.style.backgroundColor = "red";
+// }, 3000);//если функция не нужна, то используется функция-обертка
+
+// setTimeout(function() {
+//   coffeeOper.style.backgroundColor = "";
+// },  5000);
+//coffeeOper.style.backgroundColor = ""; //не работает
 
 
+// setInterval(function() { //запускается периодически
+//   let display = document.querySelector(".display");
+//   display.classList.toggle("bg-primary"); //класс выбирается из бутстрап
+// }, 1000);
 
 
+//остановка setInterval setTimeout
+//необходимо в переменную передать
+// let displayInterval = setInterval(function() {
+//   let display = document.querySelector(".display");
+//   display.classList.toggle("bg-primary");
+// }, 1000);
+
+// setTimeout(function() {
+//   clearInterval(displayInterval); //отмена setInterval, clearTimeout
+// }, 5000);
+
+//
+// function changeDisplayText() {
+//   let display = document.querySelector(".display");
+//   display.innerHTML = "Ваш кофе готовится";
+// }
+
+//setTimeout(changeDisplayText(), 5000); //функция выполняется моментально если функция указана со скобками. 
+
+//Для того, чтобы функция отработала - существует два варианта
+//первый вариант
+//setTimeout(changeDisplayText, 5000); //принимает тело функции -- без скобок
+
+//второй вариант
+// setTimeout(function() { //предпочтительный вариант
+//   changeDisplayText();
+// }, 5000);
 
 
+//События и слушатели событий
 
+/*
+  click - нажатие левой кнопки мыши
+  mouseover - наведение мышью на элемент
+  mouseout - уводим курсор с элемента
+  mousedown - зажали левую кнопку мыши на элементе
+  mouseup - отпустили левую кнопку мыши
+  
+  dblclick - двойное нажатие
+  contextmunu - нажатие правой кнопки мыши
+  
+  -------------------------------------------------
+  
+  focus - Начинается ввод в input
+  change - меняется внутреннее значение в input. Что-то ввели
+  
+  keydown - нажатие кнопки на клавиатуре
+  keyup - отжали кнопку
+  
+  transitionend - событие окончания транзиции
+  
+  submit - отправка формы
+  
+*/
 
+//1. Вешаем событие с помощью атрибута innerHTML
+/*
+  используется не часто
+  <div onclick="ShowMessage()">Нажми на меня</div>
+  onclick="alert('Получаем сдачу')"
+*/
 
+//2. Вешаем событие через свойство
 
+//let changeBtn = document.querySelector(".btn");
+// changeBtn.onclick = function() {
+//   alert("Даем сдачу"); 
+// }
 
+//changeBtn.onclick = alert("Даем сдачу"); //сразу срабатывает 
 
+//3. Метод addEventListener(event, function)
 
+// let changeBtn = document.querySelector(".btn");
+// changeBtn.addEventListener("click", function() {
+// alert("Даем сдачу"); 
+// });
+// //можно сверху наложить новое событие на старое
+// changeBtn.addEventListener("click", function() {
+// console.log("Даем сдачу много"); 
+// });
 
+//снимаем слушателя события
 
+//1. Свойство
 
+// let changeBtn = document.querySelector(".btn");
+// changeBtn.onclick = function() {
+//   alert("Даем сдачу"); 
+// }
 
+// changeBtn.onclick = null;
 
+//2.  Метод addEventListener
 
+// let changeBtn = document.querySelector(".btn");
 
+// function handler() {
+// alert("Даем сдачу"); 
+// }
 
+//changeBtn.addEventListener("click", handler);
+//changeBtn.removeEventListener("click", handler);
 
+//задача: при нажатии на кружку ".cup" должен измениться цвет ".display" и обратно
 
+// let changeGreenCup = document.querySelector(".cup"); //находим селектор .cup
 
+// changeGreenCup.onclick = function() { //вешаем событие по нажатию .cup
+//   let display = document.querySelector(".display"); //находим селектор .display
+//   if (display.style.backgroundColor == "red") { //меняем через style цвет
+//     display.style.backgroundColor = "";
+//   } else {
+//     display.style.backgroundColor = "red";
+//   }
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
 
 
 
