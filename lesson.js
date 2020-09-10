@@ -17,17 +17,18 @@
 // let images = document.getElementsByTagName("img");
 // console.log(images[0]);
 // console.log(images);
-
 // let coffeeList = document.getElementsByClassName("coffee-item");
 // console.log(coffeeList);
-
 // let coffee = document.getElementById("coffee-machine");
 // console.log(coffee);
 
 
+
+
+
 //Современные методы поиска работают любые селекторы из css
-//let atm = document.querySelector(".atm-container"); //данная команда возвращает элемент, если элементов много, то найдет первый в коде
-//console.log(atm);
+// let atm = document.querySelector(".atm-container"); //данная команда возвращает элемент, если элементов много, то найдет первый в коде
+// console.log(atm);
 
 // let coffeeItem = document.querySelector(".coffee-item");
 // console.log(coffeeItem);
@@ -43,6 +44,12 @@
 // let coffeeCup = document.querySelectorAll(".coffee-item img");
 // console.log(coffeeCup);
 
+// let rowCol = document.querySelectorAll(".col-6 span");
+// console.log(rowCol);
+
+// let rowCol1 = document.querySelector(".col-6 span");
+// console.log(rowCol1);
+
 //Навигация по DOM-элементам
 
 // let buttons = document.querySelectorAll(".coffee-item");
@@ -52,7 +59,7 @@
 //родители
 // let coffeeList = cappuccinoButton.parentElement;
 // console.log(coffeeList); //div.col-6.coffee-list.d-flex.flex-column.justify-content-around
-// //соседи
+// // //соседи
 // let nextCoffee = cappuccinoButton.nextElementSibling;
 // console.log(nextCoffee);
 // let previousCoffee = cappuccinoButton.previousElementSibling;
@@ -64,14 +71,30 @@
 // let cappuccinoText = cappuccinoButton.querySelector("span");
 // console.log(cappuccinoText);
 
+
+// заменим цвет фона на красный,
+//document.body.style.background = "grey";
+
+// а через секунду вернём как было
+//setTimeout(() => document.body.style.background = "", 1000);
+
 //Изменение элементов 
 //Изменение CSS стилей
 
-//let bigCup = document.querySelector(".cup");//нашли кружку
-//console.log(bigCup.style.width); //пустое изначально
-//bigCup.style.width = "500px"; //обращаемся к стилю и меняем размер
+//let bigCup = document.querySelectorAll(".coffee-item img");//нашли кружку
+//for (let i = 0; i < 3; i++) {
+//let bigBigCup = bigCup[i];
+//console.log(bigBigCup.style.width); //пустое изначально
+//bigBigCup.style.width = "500px"; //обращаемся к стилю и меняем размер
 
-//bigCup.style.display = "none";
+//console.log(bigBigCup.style.width); //пустое изначально
+//bigBigCup.style.height = "500px"; //обращаемся к стилю и меняем размер
+
+
+//bigBigCup.style.display = "none";
+//bigBigCup.style.display = "";
+//bigBigCup.style.backgroundColor = "red";
+//}
 //bigCup.style.display = ""; //сбрасываем свойство. Вернуть как было
 
 //bigCup.style.backgroundColor = "red"; //если свойство через тире, то применяют верблюжью нотацию
@@ -84,24 +107,41 @@
 //   bigCup.style.transform = "rotate(36000deg)";
 // }, 5000); //два параметра функция и время
 
+//let bigCup = document.querySelector(".cup");//нашли кружку
+//bigCup.style.transition = "transform 1s";
+
+// let bigCup = document.querySelectorAll(".coffee-item img");//нашли кружку
+// let bigBigCup = bigCup[2];
+// bigBigCup.style.transition = "transform 1s";
+// setTimeout(function() { 
+//   bigBigCup.style.transform = "rotate(3600deg)";
+// }, 1000); //два параметра функция и время
+//}
+
 //Изменение атрибутов
 
 // let bigCup = document.querySelector(".cup");//нашли кружку
-// console.log( bigCup.hasAttribute("src") ); //true
-// let cupSrc = bigCup.getAttribute("src");
+// console.log( bigCup.hasAttribute("src") ); //true проверяет наличие атрибута
+// let cupSrc = bigCup.getAttribute("src"); //получает значение атрибута
 // console.log(cupSrc); //img/americano.png
 
-// bigCup.setAttribute("src", "img/cappuccino.png"); //картинка заменится на капучино
-// bigCup.removeAttribute("src"); //картинка пропадет
+// bigCup.setAttribute("src", "img/cappuccino.png"); //картинка заменится на капучино  -- устанавливает значение атрибута
+// bigCup.removeAttribute("src"); //картинка пропадет --  удаляет атрибут
+// //console.log( bigCup.getAttribute("src") ); //nuii
+// console.log(bigCup);
+
 
 //задание: заменить картинку .cup  на эспрессо
 
 // let buttons = document.querySelectorAll(".coffee-item"); //находим массив с кнопками .coffee-item
-// let espresso = buttons[2]; //находим нужный элемент из массива
+// let espresso = buttons[2]; //находим нужный элемент из массива -- эспрессо
+// console.log(espresso);
 // let espressoImage = espresso.querySelector("img"); //выбираем селектор по тегу img 
+// console.log(espressoImage);
 // let espressoSrc = espressoImage.getAttribute("src"); //получаем значение атрибута src
-
+// console.log(espressoSrc);
 // let bigCup = document.querySelector(".cup"); //находит элемент к которому будем применять новый атрибут
+// console.log(bigCup);
 // bigCup.setAttribute("src", espressoSrc); //устанавливаем новый атрибут элементу
 
 //Изменение внутреннего содержимого элемента
