@@ -64,7 +64,9 @@ font-family: 'Rubik', sans-serif;
 }
 
 .cup {
-  width: 100%
+  width: 100%;
+  display: none;
+  opacity: 0;
 }
 
 .atm {
@@ -76,6 +78,7 @@ font-family: 'Rubik', sans-serif;
   background-color: lightgrey;
   border: 4px solid black;
   border-radius: 0.3rem;
+  position: relative;
 }
 
 

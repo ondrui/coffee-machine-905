@@ -146,14 +146,15 @@
 
 //Изменение внутреннего содержимого элемента
 
-// let displayText = document.querySelector(".display-text");
-// //поменять текст
-// console.log(displayText.innerText);
-// displayText.innerText = "Ваш <b>капучино</b> готовится";
+//let displayText = document.querySelector(".display-text");
+//поменять текст
+//console.log(displayText.innerText);
+//displayText.innerText = "Ваш <b>капучино</b> готовится";
 
-// //displayText.innerHTML = "Ваш Латтэ готовится";
+//displayText.innerHTML = "Ваш Латтэ готовится";
 
-// displayText.innerHTML = "Ваш <b>Латтэ</b> готовится";
+//displayText.innerHTML = "Ваш <b>Латтэ</b> готовится"; //заменяет на код
+//console.log(displayText.innerHTML);
 
 //добавить кнопки к аппарату
 
@@ -169,7 +170,6 @@
 // }
 
 //Изменение классов
-
 //let changeBtn = document.querySelector(".btn");
 
 //console.log(changeBtn.className);
@@ -178,27 +178,28 @@
 //console.log(changeBtn.classList);
 
 // changeBtn.classList.add("p-3"); //Добавить класс
-// changeBtn.classList.remove("my-2"); //Удалить класс
+//changeBtn.classList.remove("my-2"); //Удалить класс
 // console.log( changeBtn.classList.contains("btn") ); //true Проверить наличие
-// changeBtn.classList.toggle("my-5"); //добавляет или удаляет класс
+//changeBtn.classList.toggle("my-5"); //добавляет или удаляет класс
+//console.log(changeBtn);
 
 //Планирование
-// let coffeeOper = document.querySelector(".coffee-oper"); //
+//let coffeeOper = document.querySelector(".coffee-oper"); //
 
 // setTimeout(function() { //function() -- функция коллбэк
 //   coffeeOper.style.backgroundColor = "red";
 // }, 3000);//если функция не нужна, то используется функция-обертка
 
 // setTimeout(function() {
-//   coffeeOper.style.backgroundColor = "";
+// //  coffeeOper.style.backgroundColor = "";
 // },  5000);
-//coffeeOper.style.backgroundColor = ""; //не работает
+// coffeeOper.style.backgroundColor = ""; //не работает
 
 
 // setInterval(function() { //запускается периодически
 //   let display = document.querySelector(".display");
 //   display.classList.toggle("bg-primary"); //класс выбирается из бутстрап
-// }, 1000);
+// }, 3000);
 
 
 //остановка setInterval setTimeout
@@ -216,6 +217,7 @@
 // function changeDisplayText() {
 //   let display = document.querySelector(".display");
 //   display.innerHTML = "Ваш кофе готовится";
+//   return display;
 // }
 
 //setTimeout(changeDisplayText(), 5000); //функция выполняется моментально если функция указана со скобками. 
@@ -223,11 +225,14 @@
 //Для того, чтобы функция отработала - существует два варианта
 //первый вариант
 //setTimeout(changeDisplayText, 5000); //принимает тело функции -- без скобок
+// console.log(changeDisplayText());
+// console.log(changeDisplayText);
 
 //второй вариант
 // setTimeout(function() { //предпочтительный вариант
 //   changeDisplayText();
-// }, 5000);
+// }, 3000);
+
 
 
 //События и слушатели событий
@@ -240,7 +245,7 @@
   mouseup - отпустили левую кнопку мыши
   
   dblclick - двойное нажатие
-  contextmunu - нажатие правой кнопки мыши
+  contextmenu - нажатие правой кнопки мыши
   
   -------------------------------------------------
   
@@ -265,7 +270,7 @@
 
 //2. Вешаем событие через свойство
 
-//let changeBtn = document.querySelector(".btn");
+// let changeBtn = document.querySelector(".btn");
 // changeBtn.onclick = function() {
 //   alert("Даем сдачу"); 
 // }
@@ -302,8 +307,9 @@
 // alert("Даем сдачу"); 
 // }
 
-//changeBtn.addEventListener("click", handler);
-//changeBtn.removeEventListener("click", handler);
+// changeBtn.addEventListener("click", handler);
+
+// changeBtn.removeEventListener("click", handler);
 
 //задача: при нажатии на кружку ".cup" должен измениться цвет ".display" и обратно
 
@@ -318,7 +324,32 @@
 //   }
 // }
 
-//
+//Конструкця this - возвращает объект к которому обращено свойство или метод
+// let coffeeButtons = document.querySelectorAll(".coffee-item"); 
+// for (let i = 0; i < coffeeButtons.length; i++) {
+//   coffeeButtons[i].onclick = function() {
+//     console.log(this);
+//     //makeCoffee('Американо', 50, this) - это тоже самое, но вызванное по другому способу
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
